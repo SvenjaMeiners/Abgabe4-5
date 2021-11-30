@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Hier werden Ihnen die neusten Events Ihrer Region gezeigt.">
+  <meta name="keywords" content="Events, Veranstaltungen">
+  <meta name="author" content="Svenja Meiners">
+  <title>Eventseite Meiners</title>
+  <script src="LocalStorage.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <title> Hier sehen Sie die neusten Events</title>
+</head>
+
+<body>
+  <header>
+    <h1 id="zumSeitenanfang"> </h1>
+    <p> Eventseite Meiners</p>
+    <br />
+    <a>
+      <h4> <em>Hier sehen Sie alle Events, die es im Moment gibt. Sie können auch Events
+          zu der Seite hinzufügen. <br />
+          <a> <em>So sind wir immer auf dem neusten Stand und Sie
+              werden kein wichtiges Event mehr verpassen! Viel Spaß!</em> </a> </h4>
+    </a> </em>
+    <br />
+  </header>
+  <main>
+    <img
+      src="https://i2.wp.com/blogpascher.com/wp-content/uploads/2014/12/comment-configurer-plugin-wp-events-manager-tutoriel.png?resize=800%2C411&ssl=1"
+      alt="Event Beispiel" width="700" height="300">
+    <br />
+    <br />
+    <table>
+      </tr>
+  </main>
+
+  <body>
+    <input id="input-element" type="text" />
+    <button id="save-button">Save In Local Storage</button>
+    <button id="load-button">Load from Local Storage</button>
+    <div>
+      <h3>Ausgabe:</h3>
+    </div>
+
+
+    <form class="new-item-form">
+      <div class="field">
+        <label for="interpret"></labelfor>Interpret:</label>
+        <input id="interpret" type="text">
+        <br />
+        <br />
+        <br />
+      </div>
+      <div class="field">
+        <label>Date and Time:</label>
+        <input type="datetime-local" id="datetime" name="meeting-time" value="2018-06-12T19:30" min="2021-11-11T00:00"
+          max="20-06-14T00:00">
+      </div>
+      <br />
+      <div class="field">
+        <br /> 
+        <label for="price">Price (€):</label>
+        <input type="number" id="price">
+        <br />
+        <br />
+      </div>
+      <br />
+      <button type="button" id="enterevent"> Enter Event </button>
+
+    </form>
+    <br />
+    <p>
+      </table>
+      <br />
+    <table width="60%">
+      <tbody id="eventtabelle">
+      <tr>
+        <th> Interpret </th>
+        <th> Price </th>
+        <th> Date and Time </th>
+        <th> Löschen </th>
+      </tr>
+      <br />
+      <br />
+    </tbody>
+    </table>
+    </p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer>
+      Zurück zum Anfang <h1 href="#zumSeitenanfang"> hier klicken</h1>
+      <br />
+      </nav>
+    </footer>
+  </body>
+
+</html>
+

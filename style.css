@@ -1,0 +1,101 @@
+body{
+     background-color: papayawhip; 
+     font: Mochiy Pop One;
+     font-family:'Mochiy Pop One', sans-serif;
+     font-size: 96%;}
+
+
+ a{
+     font: 20px New Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+     text-decoration: black;
+     color: rgb black;
+     padding: 2px 5px 1px 5px;
+     padding-top: 200px;
+     padding-left: 10px;
+     width: 1500px;
+     padding-bottom: 500px;
+     box-shadow: bisque;
+     overflow: hidden;
+     margin-top: 5px;
+}
+    p{
+        font: 30px New Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+        border: black;
+        width: 900px;
+        padding: 2px 4px 2px 4px;
+        height: 30px;
+        background: bisque;
+        padding-top: 7px;
+        padding-left: 520px;
+        margin-top: 20px;
+        box-shadow: 4px 6px tan;
+        overflow: hidden;
+      }
+
+ .Abgabe4 {
+     height: 30 px;
+     background: papayawhip;
+     padding-top: 36px solid;
+     padding-left: 5px;
+     margin-top: 20px;
+     box-shadow: 4px 6px papayawhip;
+     overflow: hidden;}
+
+ h1{
+    font: 14px New Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"; 
+    color:darkolivegreen;
+    padding-left: 4px;
+    position: relative;
+    height: 30px;
+ }
+
+ input{
+    border:tan;
+    background-color: bisque;
+    box-shadow: 2px 3px tan;
+    border-left: 50px; 
+    font: 14px New Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"; 
+    color: black;
+    padding-left: 8px;
+    position: relative;
+    height: 25px;
+ }
+ button{
+    border:tan;
+    background-color: bisque;
+    box-shadow: 2px 3px tan;
+    border-left: 0px; 
+    font: 14px New Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"; 
+    color: black;
+    padding-left: 8px;
+    position: relative;
+    height: 25px;
+ }
+ button:hover{
+    background-color: red;
+ }
+ img {
+     padding-left: 500px;
+     float: inline;
+     width: fit-content;
+     padding: 60px;
+     animation: pulse 4s;
+     animation-iteration-count: unset;}
+
+        @keyframes pulse {
+            20% {
+                padding: 30px;
+                background-color: burlywoods;}
+        }
+    table {
+        background-color: bisque;
+        border-collapse: collapse;
+        border: none;
+    }
+    thead {
+        background-color: burlywood;
+    }
+   td, th {
+       text-align: left;
+       padding: 0.5em 1em;
+   }
