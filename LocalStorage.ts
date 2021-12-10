@@ -30,24 +30,34 @@ namespace LocalStorage {
     loadButton.addEventListener("click", loadButtonHandler);
     entereventButton.addEventListener("click", enterEvent);
 
-    if (localStorage.getItem(elementID.toString()) !== null) {
+    if (localStorage.length > 0) {
         load();
     }
 
     console.log("Test");
 
     function load(): void {
+        let key: number = 0;
         for (let i: number = 0; i < localStorage.length; i++) {
 
-            let interpret: string = interpretInput.value;
-            let price: number = parseInt(priceInput.value);
-            let datetime: Date = new Date(datetimeInput.value);
+            let interpret: string;
+            let price: number;
+            let date: Date;
 
-            interpret = (JSON.parse(localStorage.getItem(i.toString()))).interpret;
-            price = (JSON.parse(localStorage.getItem(i.toString()))).price;
-            datetime = (JSON.parse(localStorage.getItem(i.toString()))).datetime;
+            //search vor the key number
+            while (localStorage.getItem(key.toString()) === null) {
+                key++;
+            }
 
-            createEvent(interpret, price, datetime);
+            interpret = (JSON.parse(localStorage.getItem(key.toString()))).interpret;
+            price = (JSON.parse(localStorage.getItem(key.toString()))).price;        
+            date = new Date((JSON.parse(localStorage.getItem(key.toString()))).date);
+
+            localStorage.removeItem(key.toString());
+            localStorage.setItem(i.toString(), JSON.stringify(new TodoElement(interpret, price, date)));
+
+            createEvent(interpret, price, date);
+            key++;
         }
     }
 
@@ -97,8 +107,8 @@ namespace LocalStorage {
         let eventID: string = (<HTMLElement>eventLöschen.target).id;
         console.log(eventID);
         let tr: HTMLElement = document.getElementById("löschen" + eventID);
-        tr.remove();
         localStorage.removeItem(eventID.toString());
+        tr.remove();
     }
 
     function saveButtonHandler(): void {

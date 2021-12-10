@@ -24,19 +24,27 @@ var LocalStorage;
     saveButton.addEventListener("click", saveButtonHandler);
     loadButton.addEventListener("click", loadButtonHandler);
     entereventButton.addEventListener("click", enterEvent);
-    if (localStorage.getItem(elementID.toString()) !== null) {
+    if (localStorage.length > 0) {
         load();
     }
     console.log("Test");
     function load() {
+        let key = 0;
         for (let i = 0; i < localStorage.length; i++) {
-            let interpret = interpretInput.value;
-            let price = parseInt(priceInput.value);
-            let datetime = new Date(datetimeInput.value);
-            interpret = (JSON.parse(localStorage.getItem(i.toString()))).interpret;
-            price = (JSON.parse(localStorage.getItem(i.toString()))).price;
-            datetime = (JSON.parse(localStorage.getItem(i.toString()))).datetime;
-            createEvent(interpret, price, datetime);
+            let interpret;
+            let price;
+            let date;
+            //search vor the key number
+            while (localStorage.getItem(key.toString()) === null) {
+                key++;
+            }
+            interpret = (JSON.parse(localStorage.getItem(key.toString()))).interpret;
+            price = (JSON.parse(localStorage.getItem(key.toString()))).price;
+            date = new Date((JSON.parse(localStorage.getItem(key.toString()))).date);
+            localStorage.removeItem(key.toString());
+            localStorage.setItem(i.toString(), JSON.stringify(new TodoElement(interpret, price, date)));
+            createEvent(interpret, price, date);
+            key++;
         }
     }
     function enterEvent() {
@@ -75,8 +83,8 @@ var LocalStorage;
         let eventID = eventLöschen.target.id;
         console.log(eventID);
         let tr = document.getElementById("löschen" + eventID);
-        tr.remove();
         localStorage.removeItem(eventID.toString());
+        tr.remove();
     }
     function saveButtonHandler() {
         console.log("Save Button clicked");
