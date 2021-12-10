@@ -57,12 +57,11 @@ namespace LocalStorage {
         let datetime: Date = new Date(datetimeInput.value);
         console.log(interpret + "\n" + priceInput + "\n" + datetime);
 
-        createEvent(interpret, price, datetime);
-
         let todoElement: TodoElement = new TodoElement(interpret, price, datetime);
         let json: string = JSON.stringify(todoElement);
         localStorage.setItem(elementID.toString(), json);
 
+        createEvent(interpret, price, datetime);
     }
 
     function createEvent(interpret: string, price: number, datetime: Date): void {
@@ -96,6 +95,7 @@ namespace LocalStorage {
     function eventLöschen(eventLöschen: Event): void {
 
         let eventID: string = (<HTMLElement>eventLöschen.target).id;
+        console.log(eventID);
         let tr: HTMLElement = document.getElementById("löschen" + eventID);
         tr.remove();
         localStorage.removeItem(eventID.toString());

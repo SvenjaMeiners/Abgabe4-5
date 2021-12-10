@@ -44,10 +44,10 @@ var LocalStorage;
         let price = parseInt(priceInput.value);
         let datetime = new Date(datetimeInput.value);
         console.log(interpret + "\n" + priceInput + "\n" + datetime);
-        createEvent(interpret, price, datetime);
         let todoElement = new TodoElement(interpret, price, datetime);
         let json = JSON.stringify(todoElement);
         localStorage.setItem(elementID.toString(), json);
+        createEvent(interpret, price, datetime);
     }
     function createEvent(interpret, price, datetime) {
         let tr = document.createElement("tr");
@@ -73,6 +73,7 @@ var LocalStorage;
     }
     function eventLöschen(eventLöschen) {
         let eventID = eventLöschen.target.id;
+        console.log(eventID);
         let tr = document.getElementById("löschen" + eventID);
         tr.remove();
         localStorage.removeItem(eventID.toString());
